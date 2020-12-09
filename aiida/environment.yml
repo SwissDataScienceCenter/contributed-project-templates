@@ -1,0 +1,12 @@
+name: "base"
+channels:
+  - conda-forge
+  - defaults
+  - cjs14
+dependencies:
+# - aiida-core
+- aiida-core.services
+- activate-aiida
+# while aiida-core.services requires rabbitmq-server>=3.7, for some reason version 3.6.15 is installed without the line below
+- rabbitmq-server>=3.8
+prefix: "/opt/conda"
