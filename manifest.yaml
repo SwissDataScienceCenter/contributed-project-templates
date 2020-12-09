@@ -1,0 +1,6 @@
+- folder: aiida
+  name: AiiDA
+  description: AiiDA environment for exploring AiiDA databases.
+  variables:
+    description: Describe your project
+    archive_url: (optional) URL to AiiDA archive to be imported upon starting an environment

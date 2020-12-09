@@ -10,7 +10,7 @@ first_name=${user[0]}
 last_name=`join_by ' ' "${user[@]:1}"`
 
 cat > aiida_config.yaml <<EOF
-store_path: /work/{{ name }}/repo
+store_path: /work/{{ __sanitized_project_name__ }}/repo
 
 su_db_username: aiidauser
 # su_db_password:  # not yet supported
@@ -42,3 +42,9 @@ fi
 
 # create database, start daemon
 source aiida-activate -c -w 1
+
+# download and import archive if specified
+archive_url="{{ archive_url }}"
+if [ ! -z "$archive_url" ]; then
+    verdi import --non-interactive $archive_url
+fi

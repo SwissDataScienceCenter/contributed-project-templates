@@ -336,3 +336,5 @@ tags
 .renku.lock
 .renku/tmp
 .renku/cache
+
+aiida_config.yaml
