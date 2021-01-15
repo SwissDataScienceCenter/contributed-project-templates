@@ -1,0 +1,16 @@
+name: "base"
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - plotnine
+  - pip:
+    - sklearn
+    - streamlit
+    - jupyter-server-proxy
+prefix: "/opt/conda"
