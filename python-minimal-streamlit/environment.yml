@@ -1,0 +1,9 @@
+name: "base"
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pip:
+    - streamlit
+    - jupyter-server-proxy
+prefix: "/opt/conda"
