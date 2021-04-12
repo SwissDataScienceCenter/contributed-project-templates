@@ -40,11 +40,11 @@ if ! grep -q 'AIIDA_PATH' "${profile_file}" ; then
   echo "export AIIDA_PATH=\"/work/${CI_PROJECT}/repo\"" >> "${profile_file}"
 fi
 
-# create database, start daemon
-source aiida-activate -c -w 1
+# create database, don't start daemon
+source aiida-activate -c
 
-# download and import archive if specified
-archive_url="{{ archive_url }}"
-if [ ! -z "$archive_url" ]; then
-    verdi import --non-interactive $archive_url
-fi
+## download and import archive if specified
+#archive_url="{{ archive_url }}"
+#if [ ! -z "$archive_url" ]; then
+#    verdi import --non-interactive $archive_url
+#fi
