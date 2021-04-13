@@ -41,7 +41,8 @@ if ! grep -q 'AIIDA_PATH' "${profile_file}" ; then
 fi
 
 # create database, don't start daemon
-source aiida-activate -c
+reentry scan
+source aiida-activate aiida_config.yaml -c
 
 ## download and import archive if specified
 #archive_url="{{ archive_url }}"
