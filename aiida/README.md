@@ -4,7 +4,7 @@
 {% endif %}
 
 {% if archive_url %}
-This project imports an [AiiDA archive]({{ archive_url }}) upon starting an environment, which may take some time.
+This project comes with a Jupyter Notebook for importing and exploring an [AiiDA archive]({{ archive_url }}).
 {% endif %}
 
 
@@ -30,8 +30,6 @@ You should see a status similar to
 
 ### Learning about AiiDA
 
-Pick one of many resources:
-
- * The introductory [AiiDA tutorial](https://aiida.readthedocs.io/projects/aiida-core/en/latest/intro/tutorial.html), part of the [AiiDA documentation](https://aiida.readthedocs.io).
+ * [Introductory AiiDA tutorial](https://aiida.readthedocs.io/projects/aiida-core/en/latest/intro/tutorial.html), part of the [AiiDA documentation](https://aiida.readthedocs.io).
  * A [collection of historic AiiDA tutorials](https://aiida-tutorials.readthedocs.io/en/latest/).
  * The [AiiDA web site](http://www.aiida.net)

@@ -26,7 +26,7 @@ db_name: aiida
 db_username: aiidauser
 db_password: verdi
 
-profile: "${CI_PROJECT}"
+profile: "default"
 email: "$EMAIL"
 first_name: "$first_name"
 last_name: "$last_name"
