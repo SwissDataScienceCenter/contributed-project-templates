@@ -9,8 +9,10 @@ user=($GIT_AUTHOR_NAME)
 first_name=${user[0]}
 last_name=`join_by ' ' "${user[@]:1}"`
 
+project_dir=`pwd`
+
 cat > aiida_config.yaml <<EOF
-store_path: /work/{{ __sanitized_project_name__ }}/repo
+store_path: "${project_dir}/repo"
 
 su_db_username: aiidauser
 # su_db_password:  # not yet supported
