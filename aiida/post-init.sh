@@ -42,6 +42,11 @@ if ! grep -q 'AIIDA_PATH' "${profile_file}" ; then
   echo "export AIIDA_PATH=\"/work/${CI_PROJECT}/repo\"" >> "${profile_file}"
 fi
 
+## Enable AiiDA line magic
+#ipython_startup_dir=$HOME/.ipython/profile_default/startup/
+#mkdir -p $ipython_startup_dir
+
+
 # create database, don't start daemon
 reentry scan
 source aiida-activate aiida_config.yaml -c
