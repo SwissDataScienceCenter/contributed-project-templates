@@ -38,17 +38,10 @@ EOF
 # Add AIIDA_PATH environment variable 
 export AIIDA_PATH="${project_dir}/repo"
 
-## Enable AiiDA line magic
+# todo: Enable AiiDA line magic
 #ipython_startup_dir=$HOME/.ipython/profile_default/startup/
 #mkdir -p $ipython_startup_dir
-
 
 # create database, don't start daemon
 reentry scan
 source aiida-activate aiida_config.yaml -c
-
-## download and import archive if specified
-#archive_url="{{ archive_url }}"
-#if [ ! -z "$archive_url" ]; then
-#    verdi import --non-interactive $archive_url
-#fi

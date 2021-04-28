@@ -4,7 +4,7 @@
 {% endif %}
 
 {% if archive_url %}
-This project comes with a Jupyter Notebook for importing and exploring an [AiiDA archive]({{ archive_url }}).
+This project comes with a Jupyter notebook for importing and exploring an [AiiDA archive]({{ archive_url }}).
 {% endif %}
 
 
