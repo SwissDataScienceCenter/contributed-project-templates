@@ -36,10 +36,7 @@ non_interactive: true
 EOF
 
 # Add AIIDA_PATH environment variable 
-profile_file=~/.bashrc
-if ! grep -q 'AIIDA_PATH' "${profile_file}" ; then
-  echo "export AIIDA_PATH=\"${project_dir}/repo\"" >> "${profile_file}"
-fi
+export AIIDA_PATH="${project_dir}/repo"
 
 ## Enable AiiDA line magic
 #ipython_startup_dir=$HOME/.ipython/profile_default/startup/
