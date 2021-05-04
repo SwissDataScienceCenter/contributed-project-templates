@@ -12,17 +12,17 @@ This project comes with a Jupyter notebook for importing and exploring an [AiiDA
 This project comes with a pre-configured AiiDA environment:
 
  1. Start a new environment (e.g. 1 CPU, 2GB memory)
- 1. Open the terminal and type
-    ```
+ 2. Open the terminal and type
+ ```
     $ verdi status
      ✔ config dir:  /work/{{ __sanitized_project_name__ }}/repo/.aiida
      ✔ profile:     On profile default
      ✔ repository:  /work/{{ __sanitized_project_name__ }}/repo/.aiida/repository/default
      ✔ postgres:    Connected as aiidauser@localhost:5432
      ✔ rabbitmq:    Connected as amqp://guest:guest@127.0.0.1:5672?heartbeat=600
-     o daemon:      The daemon is not running
-     ```
- 1. Open the Jupyter notebook in the `notebooks/` folder or see below for how to get started with AiiDA.
+     ⏺ daemon:      The daemon is not running
+ ```
+ 3. Open the Jupyter notebook in the `notebooks/` folder or see below for how to get started with AiiDA.
 
 ### Learning about AiiDA
 
