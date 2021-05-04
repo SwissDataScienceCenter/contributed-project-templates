@@ -1,1 +1,1 @@
-git+https://github.com/aiidateam/aiida-core.git@e073972ba6b0b83d7d7964750a762da26603fa74
+aiida-core~=1.6.1,!=1.6.2

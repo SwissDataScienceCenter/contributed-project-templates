@@ -9,8 +9,10 @@ user=($GIT_AUTHOR_NAME)
 first_name=${user[0]}
 last_name=`join_by ' ' "${user[@]:1}"`
 
+project_dir=`pwd`
+
 cat > aiida_config.yaml <<EOF
-store_path: /work/{{ __sanitized_project_name__ }}/repo
+store_path: "${project_dir}/repo"
 
 su_db_username: aiidauser
 # su_db_password:  # not yet supported
@@ -24,7 +26,7 @@ db_name: aiida
 db_username: aiidauser
 db_password: verdi
 
-profile: "${CI_PROJECT}"
+profile: "default"
 email: "$EMAIL"
 first_name: "$first_name"
 last_name: "$last_name"
@@ -33,18 +35,13 @@ institution: Renkulab
 non_interactive: true
 EOF
 
-
 # Add AIIDA_PATH environment variable 
-profile_file=~/.bashrc
-if ! grep -q 'AIIDA_PATH' "${profile_file}" ; then
-  echo "export AIIDA_PATH=\"/work/${CI_PROJECT}/repo\"" >> "${profile_file}"
-fi
+export AIIDA_PATH="${project_dir}/repo"
 
-# create database, start daemon
-source aiida-activate -c -w 1
+# todo: Enable AiiDA line magic
+#ipython_startup_dir=$HOME/.ipython/profile_default/startup/
+#mkdir -p $ipython_startup_dir
 
-# download and import archive if specified
-archive_url="{{ archive_url }}"
-if [ ! -z "$archive_url" ]; then
-    verdi import --non-interactive $archive_url
-fi
+# create database, don't start daemon
+reentry scan
+source aiida-activate aiida_config.yaml -c
