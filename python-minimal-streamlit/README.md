@@ -1,6 +1,6 @@
 # python-minimal-streamlit
 
-This is a streamlit template based on the basic Python (3.7) template.
+This is a streamlit template based on the basic Python (3.9) template.
 
 ## Introduction
 

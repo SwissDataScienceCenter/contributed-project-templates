@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.7-0.7.3
+ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.9-0.10.1
 FROM ${RENKU_BASE_IMAGE}
 
 # Uncomment and adapt if code is to be included in the image
@@ -27,7 +27,7 @@ RUN conda env update -q -f /tmp/environment.yml && \
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=0.13.0
+ARG RENKU_VERSION=0.16.0
 
 # to run streamlit
 COPY jupyter_notebook_config.py ~/.jupyter/
@@ -36,8 +36,12 @@ COPY jupyter_notebook_config.py ~/.jupyter/
 # Do not edit this section and do not add anything below
 
 RUN if [ -n "$RENKU_VERSION" ] ; then \
-    pipx uninstall renku && \
-    pipx install --force renku==${RENKU_VERSION} \
-    ; fi
+        source .renku/venv/bin/activate ; \
+        currentversion=$(renku --version) ; \
+        if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
+            pip uninstall renku ; \
+            pip install --force renku==${RENKU_VERSION} ;\
+        fi \
+    fi
 
 ########################################################
