@@ -36,8 +36,12 @@ COPY jupyter_notebook_config.py ~/.jupyter/
 # Do not edit this section and do not add anything below
 
 RUN if [ -n "$RENKU_VERSION" ] ; then \
-    pip uninstall renku && \
-    pip install --force renku==${RENKU_VERSION} \
-    ; fi
+        source .renku/venv/bin/activate ; \
+        currentversion=$(renku --version) ; \
+        if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
+            pip uninstall renku ; \
+            pip install --force renku==${RENKU_VERSION} ;\
+        fi \
+    fi
 
 ########################################################
