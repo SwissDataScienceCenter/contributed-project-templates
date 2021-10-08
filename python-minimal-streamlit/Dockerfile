@@ -27,7 +27,7 @@ RUN conda env update -q -f /tmp/environment.yml && \
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=0.16.0
+ARG RENKU_VERSION=0.16.2
 
 # to run streamlit
 COPY jupyter_notebook_config.py ~/.jupyter/
@@ -39,7 +39,7 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
         source .renku/venv/bin/activate ; \
         currentversion=$(renku --version) ; \
         if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
-            pip uninstall renku ; \
+            pip uninstall renku -y ; \
             pip install --force renku==${RENKU_VERSION} ;\
         fi \
     fi
