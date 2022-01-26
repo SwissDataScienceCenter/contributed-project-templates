@@ -14,3 +14,8 @@
   description: A Renku Desktop session with Python
   variables:
     description: Describe your project
+- folder: qgis
+  name: QGIS application
+  description: A popular, open-source geographic information system.
+  variables:
+    description: Describe your QGIS project
