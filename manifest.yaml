@@ -9,3 +9,8 @@
   description: Streamlit template based on a basic Python (3.7) project.
   variables:
     description: Describe your project
+- folder: desktop
+  name: Renku Desktop
+  description: A Renku Desktop session with Python
+  variables:
+    description: Describe your project
