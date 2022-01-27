@@ -14,3 +14,9 @@
   description: A Renku Desktop session with Python
   variables:
     description: Describe your project
+- folder: matlab
+  name: MATLAB
+  description: A MATLAB client through Jupyter proxy
+  variables:
+    description: Describe your MATLAB project
+    
