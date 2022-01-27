@@ -19,4 +19,8 @@
   description: A MATLAB client through Jupyter proxy
   variables:
     description: Describe your MATLAB project
-    
+- folder: qgis
+  name: QGIS application
+  description: A popular, open-source geographic information system.
+  variables:
+    description: Describe your QGIS project
