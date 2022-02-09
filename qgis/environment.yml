@@ -1,8 +1,7 @@
 name: "base"
 channels:
   - defaults
-  - conda-forge
-dependencies:
-  - qgis
+# dependencies:
+# - add packages here
 # - one per line
 prefix: "/opt/conda"
