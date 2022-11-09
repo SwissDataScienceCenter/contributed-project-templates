@@ -17,7 +17,7 @@ by others.
 ### How to add a new template
 
 If you want to contribute a new template, you should take a look at the existing templates and think 
-about what you want your project template to facilitate. Have a look at the [template documentation](https://renku.readthedocs.io/en/latest/user/templates.html)
+about what you want your project template to facilitate. Have a look at the [template documentation](https://renku.readthedocs.io/en/latest/reference/templates.html)
 to see how the template should be structured and what kind of special information might be needed 
-(e.g. in the [manifest.yaml file](https://renku.readthedocs.io/en/latest/user/templates.html)). 
+(e.g. in the [manifest.yaml file](https://renku.readthedocs.io/en/latest/reference/templates.html)). 
 
