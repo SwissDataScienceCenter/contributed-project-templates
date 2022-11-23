@@ -19,3 +19,9 @@
   name: MATLAB
   description: A MATLAB client through Jupyter proxy
   variables: {}
+- folder: Renv
+  name: R (4.2.0) Project with Renv package managment
+  description: A simple R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
+  variables: {}
+  icon: renv-hex.png
+
