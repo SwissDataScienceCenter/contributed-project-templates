@@ -1,6 +1,6 @@
 # RStudio Customisations
 
-If you want automatically have your custom RStudio preferences applied to your RStudio server session you can alter the contents of the the `rstudio-prefs.json` file in this directory.
+If you want to automatically have your custom RStudio preferences applied to your RStudio server session you can alter the contents of the the `rstudio-prefs.json` file in this directory.
 You will also need to uncomment the line in the Dockerfile that copies it to `/home/rstudio/.config/rstudio/rstudio-prefs.json`. 
 
 You will find an example of a more custom `rstudio-prefs.json` file in `custom-rstudio-prefs.json` this showcases more of the available options.
@@ -12,5 +12,5 @@ To keep any changes to your config and have the applied by default in the future
 You can also start up a Renku session, customise you preferences in the RStudio GUI, and copy the altered `~/.config/rstudio/rstudio-prefs.json` to the `.rstudio_config_dir` directory in your renku project. 
 Alternatively, the {[rstudio.prefs](https://www.danieldsjoberg.com/rstudio.prefs/index.html)} package has some tooling to make it easier to genrate custom RStudio preferences files programatically.
 
-NB for any windows users out there you can find this config file in %appdata%\RStudio or AppData/Roaming/RStudio
+NB for any Windows users out there you can find this config file in `%appdata%\RStudio` or `AppData/Roaming/RStudio`
 

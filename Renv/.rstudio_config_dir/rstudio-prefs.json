@@ -1,5 +1,6 @@
 {
     "save_workspace": "never",
     "always_save_history": false,
-    "reuse_sessions_for_project_links": true
+    "reuse_sessions_for_project_links": true,
+    "initial_working_directory": "~/work/{{ __sanitized_project_name__ }}"
 }
