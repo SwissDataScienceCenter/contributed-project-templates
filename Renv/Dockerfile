@@ -34,9 +34,9 @@ USER ${NB_USER}
 # install the R dependencies
 ## make the renv install script and renv.lock file
 ## available in the working dir and run the install
-COPY renv_install.sh .
+COPY .renv_install.sh .
 COPY renv.lock .
-RUN bash renv_install.sh
+RUN bash .renv_install.sh
 ## ensure renv lock is in the project directory
 COPY renv.lock /home/rstudio/renv.lock
 COPY install.R /tmp/
