@@ -45,7 +45,7 @@ RUN R -f /tmp/install.R
 # To apply a custom RStudio config uncomment the line below
 # COPY .rstudio_config_dir/ /home/rstudio/.config/rstudio
 # copy ~/.config/rstudio to .rstudio_config_dir to preserve changes when rebuilding the container
-RSTUDIO_CONFIG_HOME=/home/rstudio/work/{{ __sanitized_project_name__ }}/.rstudio_config_dir
+ENV RSTUDIO_CONFIG_HOME=/home/rstudio/work/{{ __sanitized_project_name__ }}/.rstudio_config_dir
 
 ## Clean up the /home/rstudio directory to avoid confusion in nested R projects
 RUN rm /home/rstudio/.Rprofile; rm /home/rstudio/renv.lock
