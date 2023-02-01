@@ -13,20 +13,19 @@ updates:
     directory: "aiida" 
     schedule:
       interval: "weekly"
-- package-ecosystem: "docker" 
-    directory: "desktop" 
-    schedule:
-      interval: "weekly"
-- package-ecosystem: "docker" 
-    directory: "matlab" 
-    schedule:
-      interval: "weekly"
-- package-ecosystem: "docker" 
-    directory: "python-minimal-streamlit" 
-    schedule:
-      interval: "weekly"
-- package-ecosystem: "docker" 
-    directory: "qgis" 
-    schedule:
-      interval: "weekly"
-
+  - package-ecosystem: "docker" 
+      directory: "desktop" 
+      schedule:
+        interval: "weekly"
+  - package-ecosystem: "docker" 
+      directory: "matlab" 
+      schedule:
+        interval: "weekly"
+  - package-ecosystem: "docker" 
+      directory: "python-minimal-streamlit" 
+      schedule:
+        interval: "weekly"
+  - package-ecosystem: "docker" 
+      directory: "qgis" 
+      schedule:
+        interval: "weekly"
