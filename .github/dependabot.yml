@@ -14,18 +14,18 @@ updates:
     schedule:
       interval: "weekly"
   - package-ecosystem: "docker" 
-      directory: "desktop" 
-      schedule:
-        interval: "weekly"
+    directory: "desktop" 
+    schedule:
+      interval: "weekly"
   - package-ecosystem: "docker" 
-      directory: "matlab" 
-      schedule:
-        interval: "weekly"
+    directory: "matlab" 
+    schedule:
+      interval: "weekly"
   - package-ecosystem: "docker" 
-      directory: "python-minimal-streamlit" 
-      schedule:
-        interval: "weekly"
+    directory: "python-minimal-streamlit" 
+    schedule:
+      interval: "weekly"
   - package-ecosystem: "docker" 
-      directory: "qgis" 
-      schedule:
-        interval: "weekly"
+    directory: "qgis" 
+    schedule:
+      interval: "weekly"
