@@ -7,4 +7,5 @@ dependencies:
   - pip:
     - streamlit>=1.10.0
     - jupyter-server-proxy>=3.2.1
+    - traitlets<5.9.0
 prefix: "/opt/conda"
