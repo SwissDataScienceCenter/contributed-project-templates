@@ -1,7 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-matlab:0.11.1
-FROM ${RENKU_BASE_IMAGE}
+FROM renku/renkulab-matlab:0.11.1
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
