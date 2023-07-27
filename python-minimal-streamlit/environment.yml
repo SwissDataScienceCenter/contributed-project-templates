@@ -3,7 +3,8 @@ channels:
   - defaults
   - conda-forge
 dependencies:
+  - pip
   - pip:
-    - streamlit
-    - jupyter-server-proxy
+    - streamlit>=1.10.0
+    - jupyter-server-proxy>=3.2.1
 prefix: "/opt/conda"

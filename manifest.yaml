@@ -2,7 +2,6 @@
   name: AiiDA
   description: AiiDA environment for exploring AiiDA databases.
   variables:
-    description: Describe your project
     archive_url: (optional) URL to AiiDA archive to be imported upon starting an environment
 
 - folder: python-minimal-streamlit 
@@ -40,3 +39,25 @@
   description: Software for High-Energy Astrophysics
   variables: {}
   icon: python-heasoft-osa.png
+
+- folder: python-minimal-streamlit
+  name: Streamlit
+  description: Streamlit template based on a basic Python (3.9) project.
+  variables: {}
+- folder: desktop
+  name: Renku Desktop
+  description: A Renku Desktop session with Python
+  variables: {}
+- folder: qgis
+  name: QGIS application
+  description: A popular, open-source geographic information system.
+  variables: {}
+- folder: matlab
+  name: MATLAB
+  description: A MATLAB client through Jupyter proxy
+  variables: {}
+- folder: Renv
+  name: R (4.2.0) Project with Renv package managment
+  description: A simple R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
+  variables: {}
+  icon: renv-hex.png
