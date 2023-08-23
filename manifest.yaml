@@ -1,8 +1,3 @@
-- folder: aiida
-  name: AiiDA
-  description: AiiDA environment for exploring AiiDA databases.
-  variables:
-    archive_url: (optional) URL to AiiDA archive to be imported upon starting an environment
 - folder: python-minimal-streamlit
   name: Streamlit
   description: Streamlit template based on a basic Python (3.9) project.

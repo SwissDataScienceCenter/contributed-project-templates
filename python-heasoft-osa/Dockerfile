@@ -28,7 +28,7 @@ FROM integralsw/osa-python:11.1-16-g88c002b7-20210507-170349-refcat-43.0-heasoft
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=0.16.2
+ARG RENKU_VERSION=2.5.0
 
 ########################################################
 # Do not edit this section and do not add anything below
