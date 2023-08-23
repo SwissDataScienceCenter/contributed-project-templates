@@ -24,4 +24,13 @@
   description: A simple R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: renv-hex.png
-
+- folder: mmoda
+  name: MMODA/SmartSky
+  description: Live Astrophysical Workflows
+  variables: {}
+  icon: mmoda.png
+- folder: python-heasoft-osa
+  name: HEASoft and OSA
+  description: Software for High-Energy Astrophysics
+  variables: {}
+  icon: python-heasoft-osa.png
