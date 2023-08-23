@@ -1,6 +1,6 @@
 # {{ name }}
-{% if description %}
-{{ description }}
+{% if __project_description__ %}
+{{ __project_description__ }}
 {% endif %}
 
 {% if archive_url %}
@@ -11,7 +11,7 @@ This project comes with a Jupyter notebook for importing and exploring an [AiiDA
 
 This project comes with a pre-configured AiiDA environment:
 
- 1. Start a new environment (e.g. 1 CPU, 2GB memory)
+ 1. Start a new environment (e.g. 1 CPU, 2GB memory) from the `Sessions` tab of your Renku project
  2. Open the terminal and type
  ```
     $ verdi status
