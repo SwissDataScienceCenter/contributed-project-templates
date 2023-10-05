@@ -18,7 +18,7 @@ USER ${NB_USER}
 
 # install the python dependencies
 COPY requirements.txt environment.yml /tmp/
-RUN conda env update -q -f /tmp/environment.yml
+RUN mamba env update -q -f /tmp/environment.yml
 
 # get around pyyaml upgrade error ("Cannot uninstall 'PyYAML'. It is a distutils installed project...")
 RUN /opt/conda/bin/pip install --upgrade --force-reinstall pip==9.0.3 && \
