@@ -1,7 +1,6 @@
 name: "base"
 channels:
   - conda-forge
-  - defaults
   - cjs14
 dependencies:
 # - aiida-core
