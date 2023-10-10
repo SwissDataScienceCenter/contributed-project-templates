@@ -10,3 +10,9 @@ Two additional plugins are provided within the template:
 
 * renku-graph-vis, to offer a visualization of the project's Knowledge Graph.
 * renku-aqs-annotation, to intercept calls to astroquery functions and store them in the project's Knowledge Graph.
+
+<!---
+TODO adjust when the link is available
+-->
+
+More info can be found in the [ODA Workflow Development Guide](https://odahub.io/docs/guide-development/).
