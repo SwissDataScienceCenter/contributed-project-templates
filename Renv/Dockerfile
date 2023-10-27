@@ -29,6 +29,9 @@ RUN apt-get -y update && \
 # note jq and curl are used in renv_install.sh
 # librsvg2 libs are common dependencies of some R plotting libraries
 
+# Infinite RStudio session timeout
+RUN echo "session-timeout-minutes=0" >> /etc/rstudio/rsession.conf
+
 USER ${NB_USER}
 
 # install the R dependencies
