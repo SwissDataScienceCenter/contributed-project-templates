@@ -52,4 +52,6 @@ RUN echo 'oda:x:1000:1000:ODA Interactive,,,:/tmp/jovyan:/bin/bash' >> /etc/pass
 
 USER oda
 
-ENTRYPOINT bash -c 'export HOME_OVERRRIDE=/tmp/jovyan; mkdir $HOME_OVERRRIDE; cd /tmp/jovyan; source /init.sh; jupyter lab --ip 0.0.0.0 --no-browser'
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "tini", "--", "/entrypoint.sh" ]
