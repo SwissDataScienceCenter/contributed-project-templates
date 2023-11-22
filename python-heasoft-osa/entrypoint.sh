@@ -8,7 +8,5 @@ cd /tmp/jovyan;
 
 source /init.sh; 
 
-jupyter lab --ip 0.0.0.0 --no-browser'
-
 # run the command
 $@

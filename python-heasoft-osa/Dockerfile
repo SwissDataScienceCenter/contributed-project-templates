@@ -55,3 +55,5 @@ USER oda
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "tini", "--", "/entrypoint.sh" ]
+
+CMD [ "jupyter", "server", "--ip", "0.0.0.0" ]
