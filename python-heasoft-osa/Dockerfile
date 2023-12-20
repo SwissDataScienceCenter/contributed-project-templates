@@ -48,7 +48,7 @@ RUN export HOME_OVERRRIDE=/tmp && source /init.sh && \
 
 #  need to add suitable jupyterlab
 
-RUN echo 'oda:x:1000:1000:ODA Interactive,,,:/tmp/jovyan:/bin/bash' >> /etc/passwd
+RUN useradd oda -c "ODA Interactive" -d /tmp/jovyan -G 1000 -u 1000 -U
 
 USER oda
 
