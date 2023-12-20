@@ -33,7 +33,7 @@ ARG RENKU_VERSION=2.7.0
 ########################################################
 # Do not edit this section and do not add anything below
 
-RUN export HOME_OVERRRIDE=/tmp && source /init.sh && \
+RUN .  /etc/pyenvrc && \
     if [ -n "$RENKU_VERSION" ] ; then \
         pip install setuptools==57.5.0 --ignore-installed; \
     fi
