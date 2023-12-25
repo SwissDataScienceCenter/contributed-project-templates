@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-FROM renku/renkulab-vnc:0.21.0
+FROM renku/renkulab-vnc:0.22.0
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
