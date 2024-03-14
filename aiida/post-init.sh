@@ -5,11 +5,12 @@
 # Parse first/last name from GIT_AUTHOR_NAME
 # See https://stackoverflow.com/a/17841619/1069467
 function join_by { local d=$1; shift; local f=$1; shift; printf %s "$f" "${@/#/$d}"; }
-user=($GIT_AUTHOR_NAME)
+user="$(git config user.name)"
 first_name=${user[0]}
-last_name=`join_by ' ' "${user[@]:1}"`
+last_name=$(join_by ' ' "${user[@]:1}")
+email="$(git config user.email)"
 
-project_dir=`pwd`
+project_dir=$(pwd)
 
 cat > aiida_config.yaml <<EOF
 store_path: "${project_dir}/repo"
@@ -27,7 +28,7 @@ db_username: aiidauser
 db_password: verdi
 
 profile: "default"
-email: "$EMAIL"
+email: "$email"
 first_name: "$first_name"
 last_name: "$last_name"
 institution: Renkulab
@@ -35,7 +36,7 @@ institution: Renkulab
 non_interactive: true
 EOF
 
-# Add AIIDA_PATH environment variable 
+# Add AIIDA_PATH environment variable
 export AIIDA_PATH="${project_dir}/repo"
 
 # todo: Enable AiiDA line magic
