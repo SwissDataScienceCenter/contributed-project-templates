@@ -23,10 +23,10 @@ project_dir="$(pwd)"
 repo_dir="${project_dir}/repo"
 mkdir "$repo_dir"
 
-{% if archive_url %}
-
 # Export AIIDA_PATH environment variable
 export AIIDA_PATH=$repo_dir
+
+{% if archive_url %}
 
 archive_url="{{ archive_url }}"
 archive_name="${archive_url#*filename=}"
