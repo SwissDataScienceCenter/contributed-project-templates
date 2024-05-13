@@ -337,4 +337,5 @@ tags
 .renku/tmp
 .renku/cache
 
-aiida_config.yaml
+# AiiDA
+aiida_data

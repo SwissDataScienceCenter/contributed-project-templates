@@ -1,47 +1,53 @@
 #!/bin/bash
 
-# Create aiida_config.yaml configuration file for activate-aiida
+# Set some variables
+read -ra name_array <<< "$(git config user.name | tr -d "'")"
+first_name="${name_array[0]}"
+last_name="${name_array[@]:1}"
+last_name="${last_name// / }"
+email="$(git config user.email)"
+aiida_profile="aiida_renku"
+institution="AiiDA-RenkuLab"
 
-# Parse first/last name from GIT_AUTHOR_NAME
-# See https://stackoverflow.com/a/17841619/1069467
-function join_by { local d=$1; shift; local f=$1; shift; printf %s "$f" "${@/#/$d}"; }
-user=($GIT_AUTHOR_NAME)
-first_name=${user[0]}
-last_name=`join_by ' ' "${user[@]:1}"`
+project_dir="$(pwd)"
+repo_dir="${project_dir}/aiida_data"
+mkdir "$repo_dir"
 
-project_dir=`pwd`
+# Export AIIDA_PATH environment variable
+export AIIDA_PATH=$repo_dir
 
-cat > aiida_config.yaml <<EOF
-store_path: "${project_dir}/repo"
+{% if archive_url %}
 
-su_db_username: aiidauser
-# su_db_password:  # not yet supported
+archive_url="{{ archive_url }}"
+archive_name="${archive_url#*filename=}"
+archive_path="${repo_dir}/${archive_name}"
 
-db_engine: postgresql_psycopg2
-db_backend: django
+wget -O "$archive_path" "$archive_url"
 
-db_host: localhost
-db_port: 5432
-db_name: aiida
-db_username: aiidauser
-db_password: verdi
+# With archive_url, generate profile using `core.sqlite_zip` backend
+verdi profile show $aiida_profile 2> /dev/null || verdi profile setup core.sqlite_zip \
+    --profile $aiida_profile \
+    --first-name "$first_name" \
+    --last-name "$last_name" \
+    --email "$email" \
+    --institution RenkuLab \
+    --set-as-default \
+    --non-interactive \
+    --filepath "$archive_path"
 
-profile: "default"
-email: "$EMAIL"
-first_name: "$first_name"
-last_name: "$last_name"
-institution: Renkulab
+{% else %}
 
-non_interactive: true
-EOF
+# Without archive_url, generate profile using `core.sqlite_dos` backend
+verdi profile show $aiida_profile 2> /dev/null || verdi profile setup core.sqlite_dos \
+    --profile $aiida_profile \
+    --first-name "$first_name" \
+    --last-name "$last_name" \
+    --email "$email" \
+    --institution RenkuLab \
+    --set-as-default \
+    --non-interactive
 
-# Add AIIDA_PATH environment variable 
-export AIIDA_PATH="${project_dir}/repo"
+{% endif %}
 
-# todo: Enable AiiDA line magic
-#ipython_startup_dir=$HOME/.ipython/profile_default/startup/
-#mkdir -p $ipython_startup_dir
-
-# create database, don't start daemon
-reentry scan
-source aiida-activate aiida_config.yaml -c
+verdi config set warnings.rabbitmq_version False
+rabbitmq-server -detached
