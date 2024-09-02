@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-FROM renku/renkulab-py:3.10-0.23.0
+FROM renku/renkulab-py:3.10-0.24.0
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
