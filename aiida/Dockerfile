@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-FROM renku/renkulab-py:3.10-0.23.0
+FROM renku/renkulab-py:3.10-0.24.0
 
 # Effectively disable RabbitMQ `consumer_timeout`
 ENV RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS="-rabbit consumer_timeout undefined"
