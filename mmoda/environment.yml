@@ -1,0 +1,6 @@
+name: "base"
+channels:
+  - defaults
+dependencies:
+ - numpy
+prefix: "/opt/conda"
